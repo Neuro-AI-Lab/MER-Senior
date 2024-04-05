@@ -1,0 +1,969 @@
+[INFO|train.py:47] 2024-04-04 22:28:28,002 > Using device: cuda
+[INFO|train.py:51] 2024-04-04 22:28:28,125 > Label shape : torch.Size([1512])
+[INFO|train.py:52] 2024-04-04 22:28:28,126 > Label type : torch.int64
+[INFO|train.py:53] 2024-04-04 22:28:28,126 > Audio shape : torch.Size([1512, 88])
+[INFO|train.py:54] 2024-04-04 22:28:28,126 > Audio type : torch.float32
+[INFO|train.py:55] 2024-04-04 22:28:28,126 > Text shape : torch.Size([1512, 768])
+[INFO|train.py:56] 2024-04-04 22:28:28,126 > Text type : torch.float32
+[INFO|train.py:65] 2024-04-04 22:28:28,126 > ---------------- Subject-independent experiments - number of subjects: 24, number of folds: 4, number of iterations: 30 --------------
+[INFO|train.py:79] 2024-04-04 22:28:28,128 > =================================== Iteration 1 ======================================
+[INFO|train.py:81] 2024-04-04 22:28:28,128 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:28:28,129 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:28:29,959 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:28:31,496 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:28:33,153 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:28:35,642 > model id: sub1-fold1, Epoch : 34 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:28:35,645 > *** Best ACC : 71.75 ***
+[INFO|train.py:81] 2024-04-04 22:28:35,645 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:28:35,646 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:28:37,484 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:28:38,920 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:28:39,515 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:28:40,808 > model id: sub1-fold2, Epoch : 38 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:28:40,810 > *** Best ACC : 70.16 ***
+[INFO|train.py:81] 2024-04-04 22:28:40,810 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:28:40,811 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:28:42,711 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:28:44,132 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:28:44,726 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:28:45,917 > model id: sub1-fold3, Epoch : 36 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:28:45,919 > *** Best ACC : 69.52 ***
+[INFO|train.py:81] 2024-04-04 22:28:45,920 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:28:45,920 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:28:47,727 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:28:49,238 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:28:49,827 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:28:51,003 > model id: sub1-fold4, Epoch : 35 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:28:51,005 > *** Best ACC : 68.57 ***
+[INFO|train.py:173] 2024-04-04 22:28:51,005 > **************** Best and Average acc of 24 folds by subject in iteration 1*********************
+[INFO|train.py:174] 2024-04-04 22:28:51,005 > ** Best ACC : 71.75,    Avearge acc : 70.0,    std : 1.16 **
+
+[INFO|train.py:79] 2024-04-04 22:28:51,005 > =================================== Iteration 2 ======================================
+[INFO|train.py:81] 2024-04-04 22:28:51,005 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:28:51,006 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:28:52,825 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:28:54,255 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:28:54,840 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:28:55,918 > model id: sub2-fold1, Epoch : 34 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:28:55,920 > *** Best ACC : 60.95 ***
+[INFO|train.py:81] 2024-04-04 22:28:55,920 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:28:55,921 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:28:57,816 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:28:59,255 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:28:59,851 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:01,301 > model id: sub2-fold2, Epoch : 48 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:01,304 > *** Best ACC : 65.4 ***
+[INFO|train.py:81] 2024-04-04 22:29:01,304 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:29:01,305 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:03,134 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:04,677 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:05,281 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:06,549 > model id: sub2-fold3, Epoch : 36 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:06,552 > *** Best ACC : 63.17 ***
+[INFO|train.py:81] 2024-04-04 22:29:06,552 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:29:06,553 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:08,391 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:09,842 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:10,440 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:11,713 > model id: sub2-fold4, Epoch : 34 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:11,717 > *** Best ACC : 62.86 ***
+[INFO|train.py:173] 2024-04-04 22:29:11,717 > **************** Best and Average acc of 24 folds by subject in iteration 2*********************
+[INFO|train.py:174] 2024-04-04 22:29:11,717 > ** Best ACC : 65.4,    Avearge acc : 63.1,    std : 1.58 **
+
+[INFO|train.py:79] 2024-04-04 22:29:11,717 > =================================== Iteration 3 ======================================
+[INFO|train.py:81] 2024-04-04 22:29:11,717 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:29:11,718 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:13,650 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:15,104 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:15,700 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:16,853 > model id: sub3-fold1, Epoch : 27 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:16,857 > *** Best ACC : 63.76 ***
+[INFO|train.py:81] 2024-04-04 22:29:16,857 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:29:16,858 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:18,696 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:20,249 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:20,849 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:22,108 > model id: sub3-fold2, Epoch : 35 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:22,111 > *** Best ACC : 65.34 ***
+[INFO|train.py:81] 2024-04-04 22:29:22,111 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:29:22,112 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:23,955 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:25,405 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:26,001 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:27,254 > model id: sub3-fold3, Epoch : 40 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:27,257 > *** Best ACC : 66.93 ***
+[INFO|train.py:81] 2024-04-04 22:29:27,257 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:29:27,258 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:29,095 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:30,623 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:31,214 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:32,496 > model id: sub3-fold4, Epoch : 45 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:32,499 > *** Best ACC : 69.31 ***
+[INFO|train.py:173] 2024-04-04 22:29:32,499 > **************** Best and Average acc of 24 folds by subject in iteration 3*********************
+[INFO|train.py:174] 2024-04-04 22:29:32,499 > ** Best ACC : 69.31,    Avearge acc : 66.34,    std : 2.05 **
+
+[INFO|train.py:79] 2024-04-04 22:29:32,499 > =================================== Iteration 4 ======================================
+[INFO|train.py:81] 2024-04-04 22:29:32,499 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:29:32,500 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:34,320 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:35,866 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:36,463 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:37,756 > model id: sub4-fold1, Epoch : 43 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:37,759 > *** Best ACC : 70.48 ***
+[INFO|train.py:81] 2024-04-04 22:29:37,759 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:29:37,760 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:39,599 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:41,035 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:41,623 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:42,893 > model id: sub4-fold2, Epoch : 41 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:42,896 > *** Best ACC : 71.11 ***
+[INFO|train.py:81] 2024-04-04 22:29:42,896 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:29:42,897 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:44,713 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:46,272 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:46,866 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:47,965 > model id: sub4-fold3, Epoch : 21 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:47,968 > *** Best ACC : 62.22 ***
+[INFO|train.py:81] 2024-04-04 22:29:47,968 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:29:47,969 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:49,777 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:51,209 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:51,891 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:53,078 > model id: sub4-fold4, Epoch : 31 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:53,082 > *** Best ACC : 67.94 ***
+[INFO|train.py:173] 2024-04-04 22:29:53,082 > **************** Best and Average acc of 24 folds by subject in iteration 4*********************
+[INFO|train.py:174] 2024-04-04 22:29:53,082 > ** Best ACC : 71.11,    Avearge acc : 67.94,    std : 3.51 **
+
+[INFO|train.py:79] 2024-04-04 22:29:53,082 > =================================== Iteration 5 ======================================
+[INFO|train.py:81] 2024-04-04 22:29:53,082 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:29:53,083 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:29:54,874 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:29:56,313 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:29:56,900 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:29:58,212 > model id: sub5-fold1, Epoch : 46 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:29:58,215 > *** Best ACC : 70.16 ***
+[INFO|train.py:81] 2024-04-04 22:29:58,215 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:29:58,216 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:00,029 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:01,556 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:02,154 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:03,302 > model id: sub5-fold2, Epoch : 34 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:03,305 > *** Best ACC : 65.08 ***
+[INFO|train.py:81] 2024-04-04 22:30:03,305 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:30:03,306 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:05,118 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:06,552 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:07,239 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:08,467 > model id: sub5-fold3, Epoch : 34 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:08,471 > *** Best ACC : 69.21 ***
+[INFO|train.py:81] 2024-04-04 22:30:08,471 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:30:08,472 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:10,272 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:11,711 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:12,300 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:13,376 > model id: sub5-fold4, Epoch : 25 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:13,380 > *** Best ACC : 64.13 ***
+[INFO|train.py:173] 2024-04-04 22:30:13,380 > **************** Best and Average acc of 24 folds by subject in iteration 5*********************
+[INFO|train.py:174] 2024-04-04 22:30:13,380 > ** Best ACC : 70.16,    Avearge acc : 67.14,    std : 2.58 **
+
+[INFO|train.py:79] 2024-04-04 22:30:13,380 > =================================== Iteration 6 ======================================
+[INFO|train.py:81] 2024-04-04 22:30:13,380 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:30:13,381 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:15,189 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:16,750 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:17,339 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:18,423 > model id: sub6-fold1, Epoch : 30 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:18,426 > *** Best ACC : 64.76 ***
+[INFO|train.py:81] 2024-04-04 22:30:18,426 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:30:18,427 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:20,241 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:21,677 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:22,268 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:23,298 > model id: sub6-fold2, Epoch : 24 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:23,301 > *** Best ACC : 61.59 ***
+[INFO|train.py:81] 2024-04-04 22:30:23,301 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:30:23,302 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:25,211 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:26,646 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:27,236 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:28,312 > model id: sub6-fold3, Epoch : 31 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:28,316 > *** Best ACC : 62.22 ***
+[INFO|train.py:81] 2024-04-04 22:30:28,316 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:30:28,317 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:30,130 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:31,666 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:32,257 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:33,491 > model id: sub6-fold4, Epoch : 40 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:33,494 > *** Best ACC : 65.08 ***
+[INFO|train.py:173] 2024-04-04 22:30:33,494 > **************** Best and Average acc of 24 folds by subject in iteration 6*********************
+[INFO|train.py:174] 2024-04-04 22:30:33,494 > ** Best ACC : 65.08,    Avearge acc : 63.41,    std : 1.53 **
+
+[INFO|train.py:79] 2024-04-04 22:30:33,494 > =================================== Iteration 7 ======================================
+[INFO|train.py:81] 2024-04-04 22:30:33,494 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:30:33,495 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:35,305 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:36,743 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:37,334 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:38,412 > model id: sub7-fold1, Epoch : 35 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:38,415 > *** Best ACC : 69.58 ***
+[INFO|train.py:81] 2024-04-04 22:30:38,415 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:30:38,416 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:40,226 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:41,762 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:42,351 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:43,492 > model id: sub7-fold2, Epoch : 28 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:43,495 > *** Best ACC : 71.69 ***
+[INFO|train.py:81] 2024-04-04 22:30:43,495 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:30:43,496 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:45,299 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:46,838 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:47,428 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:48,755 > model id: sub7-fold3, Epoch : 58 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:48,758 > *** Best ACC : 74.34 ***
+[INFO|train.py:81] 2024-04-04 22:30:48,759 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:30:48,759 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:50,566 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:52,005 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:52,596 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:53,742 > model id: sub7-fold4, Epoch : 31 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:53,745 > *** Best ACC : 70.63 ***
+[INFO|train.py:173] 2024-04-04 22:30:53,746 > **************** Best and Average acc of 24 folds by subject in iteration 7*********************
+[INFO|train.py:174] 2024-04-04 22:30:53,746 > ** Best ACC : 74.34,    Avearge acc : 71.56,    std : 1.77 **
+
+[INFO|train.py:79] 2024-04-04 22:30:53,746 > =================================== Iteration 8 ======================================
+[INFO|train.py:81] 2024-04-04 22:30:53,746 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:30:53,747 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:30:55,557 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:30:57,092 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:30:57,681 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:30:58,735 > model id: sub8-fold1, Epoch : 32 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:30:58,738 > *** Best ACC : 65.08 ***
+[INFO|train.py:81] 2024-04-04 22:30:58,738 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:30:58,739 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:00,549 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:01,986 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:02,675 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:03,755 > model id: sub8-fold2, Epoch : 29 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:03,758 > *** Best ACC : 64.81 ***
+[INFO|train.py:81] 2024-04-04 22:31:03,758 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:31:03,759 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:05,549 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:06,988 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:07,582 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:08,673 > model id: sub8-fold3, Epoch : 24 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:08,676 > *** Best ACC : 65.61 ***
+[INFO|train.py:81] 2024-04-04 22:31:08,676 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:31:08,677 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:10,493 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:12,030 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:12,618 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:13,698 > model id: sub8-fold4, Epoch : 27 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:13,701 > *** Best ACC : 64.29 ***
+[INFO|train.py:173] 2024-04-04 22:31:13,702 > **************** Best and Average acc of 24 folds by subject in iteration 8*********************
+[INFO|train.py:174] 2024-04-04 22:31:13,702 > ** Best ACC : 65.61,    Avearge acc : 64.95,    std : 0.48 **
+
+[INFO|train.py:79] 2024-04-04 22:31:13,702 > =================================== Iteration 9 ======================================
+[INFO|train.py:81] 2024-04-04 22:31:13,702 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:31:13,703 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:15,501 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:16,938 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:17,527 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:18,682 > model id: sub9-fold1, Epoch : 36 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:18,686 > *** Best ACC : 69.05 ***
+[INFO|train.py:81] 2024-04-04 22:31:18,686 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:31:18,687 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:20,483 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:22,018 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:22,608 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:23,884 > model id: sub9-fold2, Epoch : 36 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:23,888 > *** Best ACC : 68.25 ***
+[INFO|train.py:81] 2024-04-04 22:31:23,888 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:31:23,889 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:25,684 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:27,125 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:27,813 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:29,063 > model id: sub9-fold3, Epoch : 44 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:29,066 > *** Best ACC : 68.65 ***
+[INFO|train.py:81] 2024-04-04 22:31:29,066 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:31:29,067 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:30,856 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:32,297 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:32,895 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:33,922 > model id: sub9-fold4, Epoch : 25 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:33,925 > *** Best ACC : 62.3 ***
+[INFO|train.py:173] 2024-04-04 22:31:33,925 > **************** Best and Average acc of 24 folds by subject in iteration 9*********************
+[INFO|train.py:174] 2024-04-04 22:31:33,926 > ** Best ACC : 69.05,    Avearge acc : 67.06,    std : 2.76 **
+
+[INFO|train.py:79] 2024-04-04 22:31:33,926 > =================================== Iteration 10 ======================================
+[INFO|train.py:81] 2024-04-04 22:31:33,926 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:31:33,927 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:35,715 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:37,258 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:37,847 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:38,914 > model id: sub10-fold1, Epoch : 26 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:38,918 > *** Best ACC : 64.02 ***
+[INFO|train.py:81] 2024-04-04 22:31:38,918 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:31:38,920 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:40,720 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:42,162 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:42,760 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:44,124 > model id: sub10-fold2, Epoch : 52 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:44,128 > *** Best ACC : 69.84 ***
+[INFO|train.py:81] 2024-04-04 22:31:44,128 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:31:44,130 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:45,923 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:47,465 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:48,052 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:49,249 > model id: sub10-fold3, Epoch : 40 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:49,252 > *** Best ACC : 66.14 ***
+[INFO|train.py:81] 2024-04-04 22:31:49,253 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:31:49,253 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:51,048 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:52,486 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:53,178 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:54,192 > model id: sub10-fold4, Epoch : 24 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:54,195 > *** Best ACC : 63.76 ***
+[INFO|train.py:173] 2024-04-04 22:31:54,195 > **************** Best and Average acc of 24 folds by subject in iteration 10*********************
+[INFO|train.py:174] 2024-04-04 22:31:54,195 > ** Best ACC : 69.84,    Avearge acc : 65.94,    std : 2.43 **
+
+[INFO|train.py:79] 2024-04-04 22:31:54,195 > =================================== Iteration 11 ======================================
+[INFO|train.py:81] 2024-04-04 22:31:54,195 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:31:54,196 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:31:55,984 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:31:57,419 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:31:58,017 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:31:59,226 > model id: sub11-fold1, Epoch : 40 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:31:59,229 > *** Best ACC : 69.84 ***
+[INFO|train.py:81] 2024-04-04 22:31:59,229 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:31:59,230 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:01,014 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:02,552 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:03,143 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:04,240 > model id: sub11-fold2, Epoch : 28 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:04,243 > *** Best ACC : 66.67 ***
+[INFO|train.py:81] 2024-04-04 22:32:04,243 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:32:04,244 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:06,037 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:07,470 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:08,058 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:09,207 > model id: sub11-fold3, Epoch : 29 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:09,211 > *** Best ACC : 66.4 ***
+[INFO|train.py:81] 2024-04-04 22:32:09,211 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:32:09,212 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:11,012 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:12,551 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:13,140 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:14,352 > model id: sub11-fold4, Epoch : 32 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:14,356 > *** Best ACC : 68.52 ***
+[INFO|train.py:173] 2024-04-04 22:32:14,356 > **************** Best and Average acc of 24 folds by subject in iteration 11*********************
+[INFO|train.py:174] 2024-04-04 22:32:14,356 > ** Best ACC : 69.84,    Avearge acc : 67.86,    std : 1.41 **
+
+[INFO|train.py:79] 2024-04-04 22:32:14,356 > =================================== Iteration 12 ======================================
+[INFO|train.py:81] 2024-04-04 22:32:14,356 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:32:14,357 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:16,154 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:17,603 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:18,296 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:19,688 > model id: sub12-fold1, Epoch : 46 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:19,691 > *** Best ACC : 68.78 ***
+[INFO|train.py:81] 2024-04-04 22:32:19,691 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:32:19,692 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:21,485 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:22,924 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:23,514 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:24,606 > model id: sub12-fold2, Epoch : 31 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:24,609 > *** Best ACC : 64.02 ***
+[INFO|train.py:81] 2024-04-04 22:32:24,609 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:32:24,610 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:26,407 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:27,948 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:28,537 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:29,718 > model id: sub12-fold3, Epoch : 35 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:29,721 > *** Best ACC : 66.93 ***
+[INFO|train.py:81] 2024-04-04 22:32:29,721 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:32:29,722 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:31,521 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:32,958 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:33,554 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:34,723 > model id: sub12-fold4, Epoch : 28 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:34,726 > *** Best ACC : 65.08 ***
+[INFO|train.py:173] 2024-04-04 22:32:34,726 > **************** Best and Average acc of 24 folds by subject in iteration 12*********************
+[INFO|train.py:174] 2024-04-04 22:32:34,726 > ** Best ACC : 68.78,    Avearge acc : 66.2,    std : 1.82 **
+
+[INFO|train.py:79] 2024-04-04 22:32:34,726 > =================================== Iteration 13 ======================================
+[INFO|train.py:81] 2024-04-04 22:32:34,726 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:32:34,727 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:36,515 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:38,053 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:38,644 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:39,720 > model id: sub13-fold1, Epoch : 27 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:39,723 > *** Best ACC : 65.08 ***
+[INFO|train.py:81] 2024-04-04 22:32:39,723 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:32:39,724 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:41,540 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:42,982 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:43,681 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:44,693 > model id: sub13-fold2, Epoch : 21 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:44,696 > *** Best ACC : 60.95 ***
+[INFO|train.py:81] 2024-04-04 22:32:44,697 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:32:44,697 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:46,500 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:47,938 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:48,528 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:49,692 > model id: sub13-fold3, Epoch : 42 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:49,695 > *** Best ACC : 69.21 ***
+[INFO|train.py:81] 2024-04-04 22:32:49,695 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:32:49,700 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:51,507 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:53,052 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:53,642 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:54,838 > model id: sub13-fold4, Epoch : 38 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:54,842 > *** Best ACC : 66.35 ***
+[INFO|train.py:173] 2024-04-04 22:32:54,842 > **************** Best and Average acc of 24 folds by subject in iteration 13*********************
+[INFO|train.py:174] 2024-04-04 22:32:54,842 > ** Best ACC : 69.21,    Avearge acc : 65.4,    std : 2.97 **
+
+[INFO|train.py:79] 2024-04-04 22:32:54,842 > =================================== Iteration 14 ======================================
+[INFO|train.py:81] 2024-04-04 22:32:54,842 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:32:54,843 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:32:56,643 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:32:58,083 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:32:58,673 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:32:59,953 > model id: sub14-fold1, Epoch : 29 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:32:59,957 > *** Best ACC : 66.67 ***
+[INFO|train.py:81] 2024-04-04 22:32:59,957 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:32:59,958 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:01,755 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:03,308 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:03,900 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:05,125 > model id: sub14-fold2, Epoch : 38 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:05,128 > *** Best ACC : 65.08 ***
+[INFO|train.py:81] 2024-04-04 22:33:05,128 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:33:05,129 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:06,926 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:08,365 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:08,954 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:10,230 > model id: sub14-fold3, Epoch : 37 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:10,233 > *** Best ACC : 69.52 ***
+[INFO|train.py:81] 2024-04-04 22:33:10,233 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:33:10,234 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:12,142 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:13,583 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:14,174 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:15,441 > model id: sub14-fold4, Epoch : 46 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:15,444 > *** Best ACC : 69.84 ***
+[INFO|train.py:173] 2024-04-04 22:33:15,444 > **************** Best and Average acc of 24 folds by subject in iteration 14*********************
+[INFO|train.py:174] 2024-04-04 22:33:15,444 > ** Best ACC : 69.84,    Avearge acc : 67.78,    std : 1.99 **
+
+[INFO|train.py:79] 2024-04-04 22:33:15,444 > =================================== Iteration 15 ======================================
+[INFO|train.py:81] 2024-04-04 22:33:15,444 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:33:15,445 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:17,240 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:18,787 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:19,378 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:20,371 > model id: sub15-fold1, Epoch : 20 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:20,375 > *** Best ACC : 57.94 ***
+[INFO|train.py:81] 2024-04-04 22:33:20,375 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:33:20,376 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:22,170 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:23,610 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:24,201 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:25,462 > model id: sub15-fold2, Epoch : 35 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:25,465 > *** Best ACC : 65.08 ***
+[INFO|train.py:81] 2024-04-04 22:33:25,465 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:33:25,466 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:27,261 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:28,808 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:29,407 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:30,579 > model id: sub15-fold3, Epoch : 36 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:30,582 > *** Best ACC : 63.49 ***
+[INFO|train.py:81] 2024-04-04 22:33:30,582 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:33:30,583 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:32,387 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:33,827 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:34,418 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:35,428 > model id: sub15-fold4, Epoch : 23 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:35,431 > *** Best ACC : 62.3 ***
+[INFO|train.py:173] 2024-04-04 22:33:35,432 > **************** Best and Average acc of 24 folds by subject in iteration 15*********************
+[INFO|train.py:174] 2024-04-04 22:33:35,432 > ** Best ACC : 65.08,    Avearge acc : 62.2,    std : 2.65 **
+
+[INFO|train.py:79] 2024-04-04 22:33:35,432 > =================================== Iteration 16 ======================================
+[INFO|train.py:81] 2024-04-04 22:33:35,432 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:33:35,433 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:37,226 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:38,772 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:39,362 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:40,410 > model id: sub16-fold1, Epoch : 28 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:40,413 > *** Best ACC : 60.63 ***
+[INFO|train.py:81] 2024-04-04 22:33:40,413 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:33:40,414 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:42,217 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:43,658 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:44,252 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:45,455 > model id: sub16-fold2, Epoch : 26 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:45,458 > *** Best ACC : 63.49 ***
+[INFO|train.py:81] 2024-04-04 22:33:45,459 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:33:45,459 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:47,359 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:48,797 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:49,387 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:50,700 > model id: sub16-fold3, Epoch : 32 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:50,703 > *** Best ACC : 66.03 ***
+[INFO|train.py:81] 2024-04-04 22:33:50,703 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:33:50,704 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:52,507 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:54,060 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:54,650 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:33:55,767 > model id: sub16-fold4, Epoch : 28 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:33:55,770 > *** Best ACC : 61.27 ***
+[INFO|train.py:173] 2024-04-04 22:33:55,771 > **************** Best and Average acc of 24 folds by subject in iteration 16*********************
+[INFO|train.py:174] 2024-04-04 22:33:55,771 > ** Best ACC : 66.03,    Avearge acc : 62.86,    std : 2.12 **
+
+[INFO|train.py:79] 2024-04-04 22:33:55,771 > =================================== Iteration 17 ======================================
+[INFO|train.py:81] 2024-04-04 22:33:55,771 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:33:55,772 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:33:57,573 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:33:59,012 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:33:59,604 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:00,764 > model id: sub17-fold1, Epoch : 31 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:00,767 > *** Best ACC : 63.49 ***
+[INFO|train.py:81] 2024-04-04 22:34:00,767 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:34:00,768 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:02,569 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:04,117 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:04,716 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:05,675 > model id: sub17-fold2, Epoch : 16 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:05,678 > *** Best ACC : 56.83 ***
+[INFO|train.py:81] 2024-04-04 22:34:05,678 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:34:05,679 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:07,481 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:08,915 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:09,512 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:10,544 > model id: sub17-fold3, Epoch : 23 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:10,547 > *** Best ACC : 60.63 ***
+[INFO|train.py:81] 2024-04-04 22:34:10,547 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:34:10,548 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:12,345 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:13,889 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:14,480 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:15,509 > model id: sub17-fold4, Epoch : 26 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:15,512 > *** Best ACC : 60.63 ***
+[INFO|train.py:173] 2024-04-04 22:34:15,512 > **************** Best and Average acc of 24 folds by subject in iteration 17*********************
+[INFO|train.py:174] 2024-04-04 22:34:15,512 > ** Best ACC : 63.49,    Avearge acc : 60.4,    std : 2.37 **
+
+[INFO|train.py:79] 2024-04-04 22:34:15,512 > =================================== Iteration 18 ======================================
+[INFO|train.py:81] 2024-04-04 22:34:15,512 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:34:15,513 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:17,313 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:18,749 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:19,347 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:20,692 > model id: sub18-fold1, Epoch : 44 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:20,697 > *** Best ACC : 75.0 ***
+[INFO|train.py:81] 2024-04-04 22:34:20,697 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:34:20,698 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:22,609 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:24,053 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:24,649 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:25,943 > model id: sub18-fold2, Epoch : 45 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:25,946 > *** Best ACC : 74.21 ***
+[INFO|train.py:81] 2024-04-04 22:34:25,947 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:34:25,947 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:27,749 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:29,295 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:29,884 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:31,100 > model id: sub18-fold3, Epoch : 29 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:31,103 > *** Best ACC : 71.43 ***
+[INFO|train.py:81] 2024-04-04 22:34:31,104 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:34:31,104 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:32,905 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:34,342 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:34,934 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:36,203 > model id: sub18-fold4, Epoch : 41 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:36,207 > *** Best ACC : 71.83 ***
+[INFO|train.py:173] 2024-04-04 22:34:36,207 > **************** Best and Average acc of 24 folds by subject in iteration 18*********************
+[INFO|train.py:174] 2024-04-04 22:34:36,207 > ** Best ACC : 75.0,    Avearge acc : 73.12,    std : 1.52 **
+
+[INFO|train.py:79] 2024-04-04 22:34:36,207 > =================================== Iteration 19 ======================================
+[INFO|train.py:81] 2024-04-04 22:34:36,207 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:34:36,208 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:38,012 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:39,562 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:40,152 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:41,246 > model id: sub19-fold1, Epoch : 28 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:41,249 > *** Best ACC : 62.7 ***
+[INFO|train.py:81] 2024-04-04 22:34:41,249 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:34:41,250 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:43,054 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:44,492 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:45,083 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:46,303 > model id: sub19-fold2, Epoch : 41 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:46,306 > *** Best ACC : 66.93 ***
+[INFO|train.py:81] 2024-04-04 22:34:46,306 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:34:46,307 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:48,105 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:49,653 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:50,245 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:51,500 > model id: sub19-fold3, Epoch : 44 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:51,503 > *** Best ACC : 69.31 ***
+[INFO|train.py:81] 2024-04-04 22:34:51,503 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:34:51,504 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:53,313 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:34:54,749 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:34:55,339 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:34:56,652 > model id: sub19-fold4, Epoch : 41 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:34:56,655 > *** Best ACC : 66.93 ***
+[INFO|train.py:173] 2024-04-04 22:34:56,655 > **************** Best and Average acc of 24 folds by subject in iteration 19*********************
+[INFO|train.py:174] 2024-04-04 22:34:56,655 > ** Best ACC : 69.31,    Avearge acc : 66.47,    std : 2.38 **
+
+[INFO|train.py:79] 2024-04-04 22:34:56,655 > =================================== Iteration 20 ======================================
+[INFO|train.py:81] 2024-04-04 22:34:56,655 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:34:56,656 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:34:58,461 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:00,019 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:00,613 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:01,759 > model id: sub20-fold1, Epoch : 32 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:01,762 > *** Best ACC : 64.44 ***
+[INFO|train.py:81] 2024-04-04 22:35:01,762 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:35:01,763 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:03,573 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:05,017 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:05,605 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:06,663 > model id: sub20-fold2, Epoch : 30 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:06,665 > *** Best ACC : 65.71 ***
+[INFO|train.py:81] 2024-04-04 22:35:06,665 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:35:06,666 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:08,592 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:10,030 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:10,621 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:11,774 > model id: sub20-fold3, Epoch : 31 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:11,777 > *** Best ACC : 65.4 ***
+[INFO|train.py:81] 2024-04-04 22:35:11,777 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:35:11,778 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:13,589 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:15,144 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:15,738 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:16,882 > model id: sub20-fold4, Epoch : 32 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:16,886 > *** Best ACC : 65.71 ***
+[INFO|train.py:173] 2024-04-04 22:35:16,886 > **************** Best and Average acc of 24 folds by subject in iteration 20*********************
+[INFO|train.py:174] 2024-04-04 22:35:16,886 > ** Best ACC : 65.71,    Avearge acc : 65.32,    std : 0.52 **
+
+[INFO|train.py:79] 2024-04-04 22:35:16,886 > =================================== Iteration 21 ======================================
+[INFO|train.py:81] 2024-04-04 22:35:16,886 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:35:16,887 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:18,695 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:20,131 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:20,726 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:21,822 > model id: sub21-fold1, Epoch : 31 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:21,825 > *** Best ACC : 64.02 ***
+[INFO|train.py:81] 2024-04-04 22:35:21,825 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:35:21,828 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:23,627 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:25,181 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:25,780 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:26,878 > model id: sub21-fold2, Epoch : 27 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:26,882 > *** Best ACC : 62.17 ***
+[INFO|train.py:81] 2024-04-04 22:35:26,882 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:35:26,883 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:28,686 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:30,124 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:30,723 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:31,944 > model id: sub21-fold3, Epoch : 33 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:31,948 > *** Best ACC : 64.02 ***
+[INFO|train.py:81] 2024-04-04 22:35:31,948 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:35:31,949 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:33,745 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:35,299 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:35,892 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:37,126 > model id: sub21-fold4, Epoch : 39 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:37,130 > *** Best ACC : 65.87 ***
+[INFO|train.py:173] 2024-04-04 22:35:37,130 > **************** Best and Average acc of 24 folds by subject in iteration 21*********************
+[INFO|train.py:174] 2024-04-04 22:35:37,130 > ** Best ACC : 65.87,    Avearge acc : 64.02,    std : 1.31 **
+
+[INFO|train.py:79] 2024-04-04 22:35:37,131 > =================================== Iteration 22 ======================================
+[INFO|train.py:81] 2024-04-04 22:35:37,131 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:35:37,132 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:38,937 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:40,380 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:40,970 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:42,262 > model id: sub22-fold1, Epoch : 41 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:42,265 > *** Best ACC : 70.48 ***
+[INFO|train.py:81] 2024-04-04 22:35:42,265 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:35:42,266 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:44,075 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:45,634 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:46,227 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:47,565 > model id: sub22-fold2, Epoch : 49 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:47,568 > *** Best ACC : 69.84 ***
+[INFO|train.py:81] 2024-04-04 22:35:47,568 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:35:47,569 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:49,380 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:50,820 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:51,410 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:52,481 > model id: sub22-fold3, Epoch : 25 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:52,484 > *** Best ACC : 66.35 ***
+[INFO|train.py:81] 2024-04-04 22:35:52,484 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:35:52,485 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:54,289 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:35:55,847 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:35:56,443 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:35:57,613 > model id: sub22-fold4, Epoch : 33 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:35:57,616 > *** Best ACC : 68.25 ***
+[INFO|train.py:173] 2024-04-04 22:35:57,617 > **************** Best and Average acc of 24 folds by subject in iteration 22*********************
+[INFO|train.py:174] 2024-04-04 22:35:57,617 > ** Best ACC : 70.48,    Avearge acc : 68.73,    std : 1.6 **
+
+[INFO|train.py:79] 2024-04-04 22:35:57,617 > =================================== Iteration 23 ======================================
+[INFO|train.py:81] 2024-04-04 22:35:57,617 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:35:57,618 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:35:59,425 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:00,862 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:01,453 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:02,823 > model id: sub23-fold1, Epoch : 38 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:02,827 > *** Best ACC : 64.55 ***
+[INFO|train.py:81] 2024-04-04 22:36:02,827 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:36:02,828 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:04,757 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:06,198 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:06,793 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:08,004 > model id: sub23-fold2, Epoch : 32 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:08,007 > *** Best ACC : 61.38 ***
+[INFO|train.py:81] 2024-04-04 22:36:08,007 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:36:08,008 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:09,823 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:11,265 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:11,985 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:13,050 > model id: sub23-fold3, Epoch : 27 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:13,053 > *** Best ACC : 62.7 ***
+[INFO|train.py:81] 2024-04-04 22:36:13,053 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:36:13,054 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:14,854 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:16,295 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:16,890 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:18,197 > model id: sub23-fold4, Epoch : 53 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:18,201 > *** Best ACC : 67.2 ***
+[INFO|train.py:173] 2024-04-04 22:36:18,201 > **************** Best and Average acc of 24 folds by subject in iteration 23*********************
+[INFO|train.py:174] 2024-04-04 22:36:18,201 > ** Best ACC : 67.2,    Avearge acc : 63.96,    std : 2.18 **
+
+[INFO|train.py:79] 2024-04-04 22:36:18,201 > =================================== Iteration 24 ======================================
+[INFO|train.py:81] 2024-04-04 22:36:18,201 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:36:18,202 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:20,012 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:21,573 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:22,166 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:23,709 > model id: sub24-fold1, Epoch : 24 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:23,712 > *** Best ACC : 60.05 ***
+[INFO|train.py:81] 2024-04-04 22:36:23,712 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:36:23,713 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:25,513 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:26,965 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:27,557 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:28,791 > model id: sub24-fold2, Epoch : 24 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:28,794 > *** Best ACC : 60.32 ***
+[INFO|train.py:81] 2024-04-04 22:36:28,794 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:36:28,795 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:30,600 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:32,167 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:32,767 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:34,055 > model id: sub24-fold3, Epoch : 57 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:34,058 > *** Best ACC : 70.9 ***
+[INFO|train.py:81] 2024-04-04 22:36:34,059 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:36:34,059 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:35,869 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:37,313 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:37,907 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:39,083 > model id: sub24-fold4, Epoch : 33 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:39,086 > *** Best ACC : 66.14 ***
+[INFO|train.py:173] 2024-04-04 22:36:39,086 > **************** Best and Average acc of 24 folds by subject in iteration 24*********************
+[INFO|train.py:174] 2024-04-04 22:36:39,086 > ** Best ACC : 70.9,    Avearge acc : 64.35,    std : 4.49 **
+
+[INFO|train.py:79] 2024-04-04 22:36:39,086 > =================================== Iteration 25 ======================================
+[INFO|train.py:81] 2024-04-04 22:36:39,086 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:36:39,091 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:40,901 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:42,465 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:43,054 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:44,534 > model id: sub25-fold1, Epoch : 30 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:44,537 > *** Best ACC : 64.76 ***
+[INFO|train.py:81] 2024-04-04 22:36:44,537 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:36:44,538 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:46,354 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:47,797 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:48,387 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:49,685 > model id: sub25-fold2, Epoch : 42 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:49,689 > *** Best ACC : 68.57 ***
+[INFO|train.py:81] 2024-04-04 22:36:49,689 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:36:49,692 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:51,507 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:53,067 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:53,667 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:36:55,082 > model id: sub25-fold3, Epoch : 59 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:36:55,085 > *** Best ACC : 73.02 ***
+[INFO|train.py:81] 2024-04-04 22:36:55,085 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:36:55,086 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:36:56,903 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:36:58,344 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:36:58,934 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:00,163 > model id: sub25-fold4, Epoch : 39 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:00,166 > *** Best ACC : 68.57 ***
+[INFO|train.py:173] 2024-04-04 22:37:00,166 > **************** Best and Average acc of 24 folds by subject in iteration 25*********************
+[INFO|train.py:174] 2024-04-04 22:37:00,166 > ** Best ACC : 73.02,    Avearge acc : 68.73,    std : 2.92 **
+
+[INFO|train.py:79] 2024-04-04 22:37:00,166 > =================================== Iteration 26 ======================================
+[INFO|train.py:81] 2024-04-04 22:37:00,166 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:37:00,167 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:01,990 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:03,568 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:04,168 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:05,359 > model id: sub26-fold1, Epoch : 32 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:05,362 > *** Best ACC : 69.21 ***
+[INFO|train.py:81] 2024-04-04 22:37:05,362 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:37:05,363 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:07,181 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:08,623 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:09,213 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:10,417 > model id: sub26-fold2, Epoch : 30 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:10,420 > *** Best ACC : 65.08 ***
+[INFO|train.py:81] 2024-04-04 22:37:10,420 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:37:10,421 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:12,364 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:13,807 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:14,405 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:15,875 > model id: sub26-fold3, Epoch : 51 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:15,878 > *** Best ACC : 71.75 ***
+[INFO|train.py:81] 2024-04-04 22:37:15,878 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:37:15,879 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:17,691 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:19,139 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:19,858 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:21,348 > model id: sub26-fold4, Epoch : 38 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:21,352 > *** Best ACC : 70.79 ***
+[INFO|train.py:173] 2024-04-04 22:37:21,352 > **************** Best and Average acc of 24 folds by subject in iteration 26*********************
+[INFO|train.py:174] 2024-04-04 22:37:21,352 > ** Best ACC : 71.75,    Avearge acc : 69.21,    std : 2.55 **
+
+[INFO|train.py:79] 2024-04-04 22:37:21,352 > =================================== Iteration 27 ======================================
+[INFO|train.py:81] 2024-04-04 22:37:21,352 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:37:21,353 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:23,186 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:24,629 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:25,223 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:26,751 > model id: sub27-fold1, Epoch : 30 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:26,754 > *** Best ACC : 66.98 ***
+[INFO|train.py:81] 2024-04-04 22:37:26,754 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:37:26,755 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:28,574 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:30,143 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:30,736 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:32,173 > model id: sub27-fold2, Epoch : 43 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:32,176 > *** Best ACC : 67.62 ***
+[INFO|train.py:81] 2024-04-04 22:37:32,176 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:37:32,177 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:33,999 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:35,449 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:36,045 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:37,450 > model id: sub27-fold3, Epoch : 47 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:37,453 > *** Best ACC : 67.94 ***
+[INFO|train.py:81] 2024-04-04 22:37:37,453 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:37:37,454 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:39,279 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:40,849 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:41,451 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:42,762 > model id: sub27-fold4, Epoch : 30 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:42,765 > *** Best ACC : 66.67 ***
+[INFO|train.py:173] 2024-04-04 22:37:42,765 > **************** Best and Average acc of 24 folds by subject in iteration 27*********************
+[INFO|train.py:174] 2024-04-04 22:37:42,765 > ** Best ACC : 67.94,    Avearge acc : 67.3,    std : 0.5 **
+
+[INFO|train.py:79] 2024-04-04 22:37:42,765 > =================================== Iteration 28 ======================================
+[INFO|train.py:81] 2024-04-04 22:37:42,765 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:37:42,766 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:44,589 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:46,038 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:46,629 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:47,835 > model id: sub28-fold1, Epoch : 29 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:47,838 > *** Best ACC : 63.17 ***
+[INFO|train.py:81] 2024-04-04 22:37:47,838 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:37:47,839 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:49,654 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:51,223 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:51,823 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:53,023 > model id: sub28-fold2, Epoch : 29 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:53,027 > *** Best ACC : 62.86 ***
+[INFO|train.py:81] 2024-04-04 22:37:53,027 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:37:53,028 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:54,862 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:37:56,316 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:37:56,909 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:37:58,079 > model id: sub28-fold3, Epoch : 32 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:37:58,082 > *** Best ACC : 62.86 ***
+[INFO|train.py:81] 2024-04-04 22:37:58,082 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:37:58,083 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:37:59,887 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:38:01,459 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:38:02,053 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:38:03,451 > model id: sub28-fold4, Epoch : 25 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:38:03,454 > *** Best ACC : 59.68 ***
+[INFO|train.py:173] 2024-04-04 22:38:03,454 > **************** Best and Average acc of 24 folds by subject in iteration 28*********************
+[INFO|train.py:174] 2024-04-04 22:38:03,454 > ** Best ACC : 63.17,    Avearge acc : 62.14,    std : 1.43 **
+
+[INFO|train.py:79] 2024-04-04 22:38:03,454 > =================================== Iteration 29 ======================================
+[INFO|train.py:81] 2024-04-04 22:38:03,454 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:38:03,455 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:38:05,290 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:38:06,736 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:38:07,333 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:38:08,715 > model id: sub29-fold1, Epoch : 35 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:38:08,719 > *** Best ACC : 66.35 ***
+[INFO|train.py:81] 2024-04-04 22:38:08,719 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:38:08,720 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:38:10,516 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:38:12,085 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:38:12,689 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:38:14,122 > model id: sub29-fold2, Epoch : 34 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:38:14,125 > *** Best ACC : 64.44 ***
+[INFO|train.py:81] 2024-04-04 22:38:14,125 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:38:14,127 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:38:15,979 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:38:17,421 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:38:18,016 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:38:19,456 > model id: sub29-fold3, Epoch : 31 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:38:19,459 > *** Best ACC : 64.44 ***
+[INFO|train.py:81] 2024-04-04 22:38:19,459 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:38:19,460 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:38:21,286 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:38:22,854 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:38:23,453 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:38:24,578 > model id: sub29-fold4, Epoch : 31 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:38:24,581 > *** Best ACC : 62.86 ***
+[INFO|train.py:173] 2024-04-04 22:38:24,581 > **************** Best and Average acc of 24 folds by subject in iteration 29*********************
+[INFO|train.py:174] 2024-04-04 22:38:24,581 > ** Best ACC : 66.35,    Avearge acc : 64.52,    std : 1.24 **
+
+[INFO|train.py:79] 2024-04-04 22:38:24,581 > =================================== Iteration 30 ======================================
+[INFO|train.py:81] 2024-04-04 22:38:24,581 > ******************* TEST fold 3:1 / Fold 1 *********************
+[INFO|train.py:87] 2024-04-04 22:38:24,582 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:38:26,399 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:38:27,835 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:38:28,425 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:38:29,545 > model id: sub30-fold1, Epoch : 33 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:38:29,549 > *** Best ACC : 64.02 ***
+[INFO|train.py:81] 2024-04-04 22:38:29,549 > ******************* TEST fold 3:1 / Fold 2 *********************
+[INFO|train.py:87] 2024-04-04 22:38:29,550 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:38:31,364 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:38:32,925 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:38:33,520 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:38:34,644 > model id: sub30-fold2, Epoch : 33 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:38:34,647 > *** Best ACC : 63.23 ***
+[INFO|train.py:81] 2024-04-04 22:38:34,647 > ******************* TEST fold 3:1 / Fold 3 *********************
+[INFO|train.py:87] 2024-04-04 22:38:34,648 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:38:36,470 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:38:37,915 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:38:38,513 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:38:39,522 > model id: sub30-fold3, Epoch : 23 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:38:39,525 > *** Best ACC : 58.47 ***
+[INFO|train.py:81] 2024-04-04 22:38:39,525 > ******************* TEST fold 3:1 / Fold 4 *********************
+[INFO|train.py:87] 2024-04-04 22:38:39,526 > similarity matrix construction start...
+[INFO|train.py:97] 2024-04-04 22:38:41,342 > similarity matrix construction Done...
+[INFO|train.py:116] 2024-04-04 22:38:42,908 > graph structures are saved to save/figures/structure/
+[INFO|train.py:128] 2024-04-04 22:38:43,500 > graph node features are saved to save/figures/feature/
+[INFO|train.py:157] 2024-04-04 22:38:44,799 > model id: sub30-fold4, Epoch : 37 - Early Stopping
+[INFO|train.py:168] 2024-04-04 22:38:44,802 > *** Best ACC : 65.61 ***
+[INFO|train.py:173] 2024-04-04 22:38:44,803 > **************** Best and Average acc of 24 folds by subject in iteration 30*********************
+[INFO|train.py:174] 2024-04-04 22:38:44,803 > ** Best ACC : 65.61,    Avearge acc : 62.83,    std : 2.66 **
+
+[INFO|train.py:180] 2024-04-04 22:38:44,803 >  The average accuracy and standard deviation : 66.02733726501465, 2.8766981414841375
