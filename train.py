@@ -1,3 +1,4 @@
+import argparse
 import pandas as pd
 import numpy as np
 import torch
@@ -29,9 +30,7 @@ def get_dataset(args):
 
 
 
-def main():
-    # Load config from YAML file and Setup argparse with the config
-    args = setup_config_args(filepath='config.yaml', dataset='IITP-SMED')
+def main(args):
 
     # Fix random seed
     fix_seed(args.seed)
@@ -185,4 +184,9 @@ def main():
     return
 
 if __name__ == "__main__":
-    main()
+    # Load config from YAML file and Setup argparse with the config
+    parser = argparse.ArgumentParser(description='Arguments set from prompt and YAML configuration.')
+    parser.add_argument('--dataset', type=str, default='IITP-SMED', help='dataset (default: IITP-SMED)')
+    args = setup_config_args(parser, filepath='config.yaml', dataset='IITP-SMED')
+
+    main(args)

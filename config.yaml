@@ -45,3 +45,4 @@ IITP-SMED: # IITP Senior Multimodal Emotion Dataset (SMED)
   pt : 0.7 # probability threshold
 
   patience: 10 # patience for early stopping method
+

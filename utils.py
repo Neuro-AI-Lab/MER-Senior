@@ -13,15 +13,13 @@ import matplotlib.pyplot as plt
 from datetime import datetime as dt
 
 
-def setup_config_args(filepath: str = 'config.yaml', dataset: str = 'IITP-SMED'):
+def setup_config_args(parser, filepath: str = 'config.yaml', dataset: str = 'IITP-SMED'):
     """Load a YAML configuration"""
     with open(filepath, 'r') as f:
         config = yaml.safe_load(f)[dataset]
     f.close()
 
     """Setup argparse based on the YAML configuration"""
-    parser = argparse.ArgumentParser(description='Arguments set from YAML configuration.')
-    parser.add_argument(f'--dataset', type=str, default=dataset, help=f'dataset (default: {dataset})')
     for key, value in config.items():
         arg_type = type(value)
         parser.add_argument(f'--{key}', type=arg_type, default=value, help=f'{key} (default: {value})')
