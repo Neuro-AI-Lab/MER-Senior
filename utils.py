@@ -13,10 +13,10 @@ import matplotlib.pyplot as plt
 from datetime import datetime as dt
 
 
-def setup_config_args(parser, filepath: str = 'config.yaml', dataset: str = 'IITP-SMED'):
+def setup_config_args(parser, filepath: str = 'config.yaml'):
     """Load a YAML configuration"""
     with open(filepath, 'r') as f:
-        config = yaml.safe_load(f)[dataset]
+        config = yaml.safe_load(f)[parser.parse_args().dataset]
     f.close()
 
     """Setup argparse based on the YAML configuration"""
@@ -39,6 +39,13 @@ def fix_seed(seed: int = 2024):
 
     return
 
+def get_device(cuda_id):
+    os.environ["CUDA_DEVICE_ORDER"] = 'PCI_BUS_ID'  # Arrange GPU devices starting from 0
+    os.environ["CUDA_VISIBLE_DEVICES"] = cuda_id  # Set the GPU
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    return device
 
 def get_logger(filepath: str, level=logging.INFO):
     logger = logging.getLogger(__name__)

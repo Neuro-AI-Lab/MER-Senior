@@ -5,7 +5,7 @@ import torch
 import os
 
 from models import GraphConvolution, GraphConvolutionalEncoder, GRACE, learner
-from utils import setup_config_args, fix_seed, get_logger, get_activation, save_np, save_heatmap, make_route
+from utils import setup_config_args, fix_seed, get_logger, get_activation, save_np, save_heatmap, make_route, get_device
 from functionals import symmetric_normalization, normalization, similarity_matrix, ssm_fusion, concatenate_fusion
 
 
@@ -41,8 +41,9 @@ def main(args):
     filepath = os.path.join(args.log_save_path, file_name)
     log = get_logger(filepath=filepath)
 
+    log.info(args)
     # select CUDA or CPU
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = get_device(args.cuda_id)
     log.info(f'Using device: {device}')
 
     label, audio, text = get_dataset(args)
@@ -187,6 +188,7 @@ if __name__ == "__main__":
     # Load config from YAML file and Setup argparse with the config
     parser = argparse.ArgumentParser(description='Arguments set from prompt and YAML configuration.')
     parser.add_argument('--dataset', type=str, default='IITP-SMED', help='dataset (default: IITP-SMED)')
-    args = setup_config_args(parser, filepath='config.yaml', dataset='IITP-SMED')
+    parser.add_argument('--cuda_id', type=str, default='0', help='Cuda device ID (default: 0)')
+    args = setup_config_args(parser, filepath='config.yaml')
 
     main(args)
