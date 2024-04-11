@@ -60,7 +60,7 @@ def ssm_fusion(ssm_1, ssm_2, nssm_1, nssm_2, k, t):
             neighbor = neigh.kneighbors([[vector[i]]], return_distance=False)
             neighbors[i] = neighbor.squeeze()
 
-        neighbors = torch.from_numpy(neighbors).to(torch.int32)
+        neighbors = torch.from_numpy(neighbors).to(torch.long)
         return neighbors
 
     length = ssm_1.shape[0]

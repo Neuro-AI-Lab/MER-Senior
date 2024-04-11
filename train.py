@@ -82,10 +82,10 @@ def main(args):
      We conduct subject-independent experiments 30 times for reliability.
     In each experiment, we test performances based on 4-fold cross validation due to the lack of data
     """
-    total_avg_list, total_std_list = np.array([]), np.array([])
+    total_avg_list, total_std_list, total_cfm_list, total_f1_micro_list, total_f1_macro_list = np.array([]), np.array([]), np.array([]), np.array([]), np.array([])
     date = '240321'
     for j in range(args.n_times_draw):
-        best_acc_list = np.array([])
+        best_acc_list, cfm_list, f1_micro_list, f1_macro_list = np.array([]), np.array([]), np.array([]), np.array([])
         log.info("=================================== Iteration {} ======================================".format(j + 1))
         for i in range(args.n_folds):
             log.info("******************* TEST fold 3:1 / Fold {} *********************".format(i + 1))
@@ -155,7 +155,7 @@ def main(args):
             model_id = 'iteration'+str(j+1)+'-fold'+str(i+1)
 
             make_route(args.model_save_path)
-            best_acc, best_z, cfm, out_trigger, best_epoch = learner(model_id, model, optimizer, feature, adj, label,
+            best_acc, best_z, cfm, f1_micro, f1_macro, out_trigger, best_epoch = learner(model_id, model, optimizer, feature, adj, label,
                                                                   train_identifier, test_identifier,
                                                                   args, isdeap=False, verbose=False, earlystop=False)
 
@@ -173,10 +173,13 @@ def main(args):
             torch.save(model.state_dict(), model_save_file)
 
             make_route(args.tensor_save_path)
-            save_np(args.tensor_save_path, 'confusion_matrix_' + fold_idx, cfm)
+            #save_np(args.tensor_save_path, 'confusion_matrix_' + fold_idx, cfm)
 
             log.info("*** Best ACC : {} ***".format(round(best_acc.item(), 2)))
             best_acc_list = np.append(best_acc_list, best_acc.item())
+            cfm_list = np.concatenate([cfm_list, cfm[np.newaxis]]) if cfm_list.size else cfm[np.newaxis]
+            f1_micro_list = np.append(f1_micro_list, f1_micro.item())
+            f1_macro_list = np.append(f1_macro_list, f1_macro.item())            
 
         avg = np.mean(best_acc_list)
         std = np.std(best_acc_list)
@@ -186,12 +189,17 @@ def main(args):
                                                                                    np.round(std, 2)))
         total_avg_list = np.append(total_avg_list, avg)
         total_std_list = np.append(total_std_list, avg)
+        total_cfm_list = np.concatenate([total_cfm_list, np.mean(cfm_list, axis=0, keepdims=True)]) if total_cfm_list.size else np.mean(cfm_list, axis=0, keepdims=True)
+        total_f1_micro_list = np.append(total_f1_micro_list, np.mean(f1_micro_list))
+        total_f1_macro_list = np.append(total_f1_macro_list, np.mean(f1_macro_list))
 
-    log.info(f" The average accuracy and standard deviation : {np.mean(total_avg_list)}, {np.std(total_std_list)}")
-    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_avg_list_' + date, total_avg_list)
-    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_std_list_' + date,
-           total_std_list)
-
+    log.info(f" The average accuracy, standard deviation, f1_score(micro), f1_score(macro) : {np.mean(total_avg_list)}, {np.mean(total_std_list)}, {np.mean(total_f1_micro_list)}, {np.mean(total_f1_macro_list)}")
+    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_avg_list_' + date +'_'+ args.dataset, total_avg_list)
+    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_std_list_' + date, total_std_list)
+    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_average_confusion_matrix_' + date, np.mean(total_cfm_list, axis=0))
+    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_f1_micro_list_' + date, total_f1_micro_list)
+    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_f1_macro_list_' + date, total_f1_macro_list)
+    log.info(f"{np.mean(total_cfm_list, axis=0)}")
     return
 
 if __name__ == "__main__":
