@@ -29,6 +29,13 @@ def get_dataset(args):
     return label, audio, text
 
 
+def generate_random_unique_indices(n_rows, row_size, max_val):
+    """Generates a tensor of shape (n_rows, row_size) with unique values in each row."""
+    tensor = torch.empty(n_rows, row_size, dtype=torch.long)
+    for i in range(n_rows):
+        tensor[i] = torch.randperm(max_val)[:row_size]
+    return tensor
+
 
 def main(args):
 
@@ -60,11 +67,14 @@ def main(args):
     # Generate random indices with replacement (might contain duplicates within rows)
     # Note: This approach does not guarantee uniqueness within each draw
     n_subjects_by_fold = args.n_subjects // args.n_folds
-    iteration_indices = torch.randint(0, 24, (args.n_times_draw, n_subjects_by_fold))
+
+    # Generate the tensor
+    random_unique_indices = generate_random_unique_indices(args.n_times_draw, n_subjects_by_fold, args.n_subjects)
 
     log.info("---------------- Subject-independent experiments - number of subjects: {}, number of folds: {}, number of iterations: {} --------------".format(
         int(args.n_subjects), args.n_folds, args.n_times_draw))
 
+    log.info(f'Random unique indices : {random_unique_indices}')
 
     im = torch.eye(args.n_samples, dtype=torch.float32)
 
@@ -128,7 +138,7 @@ def main(args):
             log.info(f"graph node features are saved to {args.feature_save_path}")
 
             identifier = torch.ones(args.n_subjects, args.n_trials).bool()
-            identifier[iteration_indices[j]] = False
+            identifier[random_unique_indices[j]] = False
             identifier = identifier.reshape(-1)
             train_identifier = identifier.squeeze().to(device)
             test_identifier = ~train_identifier
