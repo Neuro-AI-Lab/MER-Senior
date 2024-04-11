@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import math
 from typing import Optional
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, f1_score
 from functionals import symmetric_normalization
 
 
@@ -327,7 +327,6 @@ def learner(id, model, optimizer, feature, adj, label, train_identifier, test_id
         tr_acc = tr1_acc if tr1_acc > tr2_acc else tr2_acc
 
         tr_loss = (tr1_loss + tr2_loss) / 2.
-        total_acc = (tr_acc + acc) / 2.
 
         if tr_acc > best_acc:
             best_acc = tr_acc
@@ -360,5 +359,7 @@ def learner(id, model, optimizer, feature, adj, label, train_identifier, test_id
 
     cfm = confusion_matrix(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(),
                            normalize='true')
+    f1_micro = f1_score(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(), average='micro')
+    f1_macro = f1_score(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(), average='macro')
 
-    return best_acc, best_z, cfm, out_trigger, best_epoch
+    return best_acc, best_z, cfm, f1_micro, f1_macro, out_trigger, best_epoch
