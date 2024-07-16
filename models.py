@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import math
 from typing import Optional
-from sklearn.metrics import confusion_matrix, f1_score
+from sklearn.metrics import confusion_matrix, f1_score, classification_report
 from functionals import symmetric_normalization
 
 
@@ -359,7 +359,8 @@ def learner(id, model, optimizer, feature, adj, label, train_identifier, test_id
 
     cfm = confusion_matrix(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(),
                            normalize='true')
-    f1_micro = f1_score(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(), average='micro')
-    f1_macro = f1_score(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(), average='macro')
-
-    return best_acc, best_z, cfm, f1_micro, f1_macro, out_trigger, best_epoch
+    # f1_micro = f1_score(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(), average='micro')
+    # f1_macro = f1_score(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(), average='macro')
+    print(classification_report(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(), target_names=['기쁨', '중립', '불안', '당황', '상처', '슬픔', '분노']))
+    report = classification_report(tr_y.cpu().numpy(), best_pred.max(1, keepdim=True)[1].detach().cpu().numpy(), target_names=['기쁨', '중립', '불안', '당황', '상처', '슬픔', '분노'],output_dict=True)
+    return best_acc, best_z, cfm, report, out_trigger, best_epoch

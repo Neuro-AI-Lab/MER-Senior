@@ -8,18 +8,28 @@ from models import GraphConvolution, GraphConvolutionalEncoder, GRACE, learner
 from utils import setup_config_args, fix_seed, get_logger, get_activation, save_np, save_heatmap, make_route, get_device
 from functionals import symmetric_normalization, normalization, similarity_matrix, ssm_fusion, concatenate_fusion
 
-
+from dataloader.dataloader import AudioTextDataset, load_dataset
+from dataloader.dataembedding import DataProcessor
+ 
 def get_dataset(args):
-    # csv data to pandas dataframe
-    data = pd.read_csv(args.data_load_path)
+ 
+    file_path = args.data_load_path
 
+    audio_dir = args.audio_dir
+ 
+    dataset = load_dataset(file_path, audio_dir)
+
+    processor = DataProcessor(dataset, args)
+
+    data = processor.process()
+    # print(data)
     # get certain attributes
-    label = torch.from_numpy(data.loc[:, 'Label'].to_numpy()).to(torch.long)
+    label = torch.from_numpy(data.loc[:, 'emotion'].to_numpy()).to(torch.long)
     audio = torch.from_numpy(
         data.loc[:, 'audio_feature1':'audio_feature' + str(args.n_audio_features)].to_numpy()).to(
-        torch.torch.float32)
+        torch.torch.float32) if 'a' in args.modality else torch.empty(0)
     text = torch.from_numpy(data.loc[:, 'text_feature1':].to_numpy()).to(
-        torch.torch.float32)
+        torch.torch.float32) if 't' in args.modality else torch.empty(0)
 
     # convert nan values to zero
     audio = torch.where(torch.isnan(audio), torch.zeros_like(audio), audio)
@@ -82,10 +92,11 @@ def main(args):
      We conduct subject-independent experiments 30 times for reliability.
     In each experiment, we test performances based on 4-fold cross validation due to the lack of data
     """
-    total_avg_list, total_std_list, total_cfm_list, total_f1_micro_list, total_f1_macro_list = np.array([]), np.array([]), np.array([]), np.array([]), np.array([])
+    total_avg_list, total_std_list, total_cfm_list, total_macro_f1_list, total_weighted_f1_list = np.array([]), np.array([]), np.array([]), np.array([]), np.array([])
     date = '240321'
     for j in range(args.n_times_draw):
-        best_acc_list, cfm_list, f1_micro_list, f1_macro_list = np.array([]), np.array([]), np.array([]), np.array([])
+        class_f1_score = [0, 0, 0, 0, 0, 0, 0]
+        best_acc_list, cfm_list, macro_f1_list, weighted_f1_list = np.array([]), np.array([]), np.array([]), np.array([])
         log.info("=================================== Iteration {} ======================================".format(j + 1))
         for i in range(args.n_folds):
             log.info("******************* TEST fold 3:1 / Fold {} *********************".format(i + 1))
@@ -95,37 +106,42 @@ def main(args):
             text = normalization(text, axis=0, ntype='standardization')
 
             log.info("similarity matrix construction start...")
-            asm = similarity_matrix(audio, scale=0.9)
-            sasm = (asm + asm.T) / 2
-            nsasm = symmetric_normalization(sasm, im)
+            if 'a' in args.modality:
+                asm = similarity_matrix(audio, scale=0.9)
+                sasm = (asm + asm.T) / 2
+                nsasm = symmetric_normalization(sasm, im)
 
-            tsm = similarity_matrix(text, scale=0.9)
-            stsm = (tsm + tsm.T) / 2
-            nstsm = symmetric_normalization(stsm, im)
+            if 't' in args.modality:
+                tsm = similarity_matrix(text, scale=0.9)
+                stsm = (tsm + tsm.T) / 2
+                nstsm = symmetric_normalization(stsm, im)
 
-            fsm = ssm_fusion(asm, nsasm, tsm, nstsm, args.k_neighbor, args.timestep)
+            fsm = ssm_fusion(asm, nsasm, tsm, nstsm, args.k_neighbor, args.timestep) if args.modality == 'at' else nsasm if args.modality == 'a' else nstsm if args.modality == 't' else None
             log.info("similarity matrix construction Done...")
 
             make_route(args.structure_save_path)
-            save_heatmap(asm, "Audio Similarity Matrix", "Samples", "Samples",
-                         args.structure_save_path + 'asm_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
-                         _dpi=300, _facecolor="#eeeeee", _bbox_inches='tight')
-            save_heatmap(nsasm, "Normalized Symmetric Audio Similarity Matrix", "Samples", "Samples",
-                         args.structure_save_path + 'nsasm_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
-                         _dpi=300, _facecolor="#eeeeee", _bbox_inches='tight')
-            save_heatmap(tsm, "Text Similarity Matrix", "Samples", "Samples",
-                         args.structure_save_path + 'tsm_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
-                         _dpi=300, _facecolor="#eeeeee", _bbox_inches='tight')
-            save_heatmap(nstsm, "Normalized Symmetric Text Similarity Matrix", "Samples", "Samples",
-                         args.structure_save_path + 'nstsm_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
-                         _dpi=300, _facecolor="#eeeeee", _bbox_inches='tight')
+            if 'a' in args.modality:
+                save_heatmap(asm, "Audio Similarity Matrix", "Samples", "Samples",
+                            args.structure_save_path + 'asm_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
+                            _dpi=300, _facecolor="#eeeeee", _bbox_inches='tight')
+                save_heatmap(nsasm, "Normalized Symmetric Audio Similarity Matrix", "Samples", "Samples",
+                            args.structure_save_path + 'nsasm_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
+                            _dpi=300, _facecolor="#eeeeee", _bbox_inches='tight')
+                
+            if 't' in args.modality:
+                save_heatmap(tsm, "Text Similarity Matrix", "Samples", "Samples",
+                            args.structure_save_path + 'tsm_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
+                            _dpi=300, _facecolor="#eeeeee", _bbox_inches='tight')
+                save_heatmap(nstsm, "Normalized Symmetric Text Similarity Matrix", "Samples", "Samples",
+                            args.structure_save_path + 'nstsm_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
+                            _dpi=300, _facecolor="#eeeeee", _bbox_inches='tight')
 
             save_heatmap(fsm, "Fused Symmetric Similarity Matrix", "Samples", "Samples",
                          args.structure_save_path + '/fsm_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
                          _dpi=300, _facecolor="#eeeeee", _bbox_inches='tight')
             log.info(f"graph structures are saved to {args.structure_save_path}")
 
-            ffm = concatenate_fusion(audio, text)
+            ffm = concatenate_fusion(audio, text) if args.modality == 'at' else audio if args.modality == 'a' else text if args.modality == 't' else None
             make_route(args.feature_save_path)
             save_heatmap(ffm, "Fused Input Features", "Feature dimensions", "Samples",
                          args.feature_save_path + '/fused_feature_' + fold_idx + '_' + date + '.png', clim_min=None, clim_max=None,
@@ -134,7 +150,7 @@ def main(args):
             adj = fsm.to(device)
             feature = ffm.to(device)
             label = label.to(device)
-
+            print(adj.shape, feature.shape, label.shape)
             log.info(f"graph node features are saved to {args.feature_save_path}")
 
             identifier = torch.ones(args.n_subjects, args.n_trials).bool()
@@ -155,7 +171,7 @@ def main(args):
             model_id = 'iteration'+str(j+1)+'-fold'+str(i+1)
 
             make_route(args.model_save_path)
-            best_acc, best_z, cfm, f1_micro, f1_macro, out_trigger, best_epoch = learner(model_id, model, optimizer, feature, adj, label,
+            best_acc, best_z, cfm, report, out_trigger, best_epoch = learner(model_id, model, optimizer, feature, adj, label,
                                                                   train_identifier, test_identifier,
                                                                   args, isdeap=False, verbose=False, earlystop=False)
 
@@ -173,14 +189,22 @@ def main(args):
             torch.save(model.state_dict(), model_save_file)
 
             make_route(args.tensor_save_path)
-            # save_np(args.tensor_save_path, 'confusion_matrix_' + fold_idx, cfm)
 
             log.info("*** Best ACC : {} ***".format(round(best_acc.item(), 2)))
             best_acc_list = np.append(best_acc_list, best_acc.item())
             cfm_list = np.concatenate([cfm_list, cfm[np.newaxis]]) if cfm_list.size else cfm[np.newaxis]
-            f1_micro_list = np.append(f1_micro_list, f1_micro.item())
-            f1_macro_list = np.append(f1_macro_list, f1_macro.item())            
-
+            weighted_f1_list = np.append(weighted_f1_list, report['weighted avg']['f1-score'])
+            macro_f1_list = np.append(macro_f1_list, report['macro avg']['f1-score'])
+            # print(report)
+            class_f1_score[0] += report['기쁨']['f1-score']
+            class_f1_score[1] += report['중립']['f1-score']
+            class_f1_score[2] += report['불안']['f1-score']
+            class_f1_score[3] += report['당황']['f1-score']
+            class_f1_score[4] += report['상처']['f1-score']
+            class_f1_score[5] += report['슬픔']['f1-score']
+            class_f1_score[6] += report['분노']['f1-score']
+        
+        print([i/4 for i in class_f1_score])
         avg = np.mean(best_acc_list)
         std = np.std(best_acc_list)
         log.info(f"**************** Best and Average acc of 24 folds by subject in iteration {j+1}*********************")
@@ -190,22 +214,21 @@ def main(args):
         total_avg_list = np.append(total_avg_list, avg)
         total_std_list = np.append(total_std_list, std)
         total_cfm_list = np.concatenate([total_cfm_list, np.mean(cfm_list, axis=0, keepdims=True)]) if total_cfm_list.size else np.mean(cfm_list, axis=0, keepdims=True)
-        total_f1_micro_list = np.append(total_f1_micro_list, np.mean(f1_micro_list))
-        total_f1_macro_list = np.append(total_f1_macro_list, np.mean(f1_macro_list))
+        total_weighted_f1_list = np.append(total_weighted_f1_list, np.mean(weighted_f1_list))
+        total_macro_f1_list = np.append(total_macro_f1_list, np.mean(macro_f1_list))
 
-    log.info(f" The average accuracy, standard deviation, f1_score(micro), f1_score(macro) : {np.mean(total_avg_list)}, {np.mean(total_std_list)}, {np.mean(total_f1_micro_list)}, {np.mean(total_f1_macro_list)}")
+    log.info(f" The average accuracy, standard deviation, f1_score(weighted avg), f1_score(macro avg) : {np.mean(total_avg_list)}, {np.mean(total_std_list)}, {np.mean(total_weighted_f1_list)}, {np.mean(total_macro_f1_list)}")
     save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_avg_list_' + date +'_'+ args.dataset, total_avg_list)
     save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_std_list_' + date +'_'+ args.dataset, total_std_list)
     save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_average_confusion_matrix_' + date +'_'+ args.dataset, np.mean(total_cfm_list, axis=0))
-    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_f1_micro_list_' + date +'_'+ args.dataset, total_f1_micro_list)
-    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_f1_macro_list_' + date +'_'+ args.dataset, total_f1_macro_list)
-    # log.info(f"{np.mean(total_cfm_list, axis=0)}")
+    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_weighted_f1_list_' + date +'_'+ args.dataset, total_weighted_f1_list)
+    save_np(args.tensor_save_path, 'subject_independent_n_folds_' + str(args.n_folds) + '_total_macro_f1_list_' + date +'_'+ args.dataset, total_macro_f1_list)
     return
 
 if __name__ == "__main__":
     # Load config from YAML file and Setup argparse with the config
     parser = argparse.ArgumentParser(description='Arguments set from prompt and YAML configuration.')
-    parser.add_argument('--dataset', type=str, default='IITP-SMED', help='dataset (default: IITP-SMED)')
+    parser.add_argument('--dataset', type=str, default='IITP-SMED-ORIGIN', help='dataset (default: IITP-SMED)')
     parser.add_argument('--cuda_id', type=str, default='0', help='Cuda device ID (default: 0)')
     args = setup_config_args(parser, filepath='config.yaml')
 
