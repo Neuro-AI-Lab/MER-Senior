@@ -28,10 +28,10 @@ You should consider deep learning setups such as CUDA and PyTorch versions avail
 Train and evaluate the model by executing as
 
 ```
-python train.py --dataset IITP-SMED --cuda_id 0
+python train.py --dataset IITP-SMED-STT --cuda_id 0
 ```
 
-Available --dataset arguments must be one of [IITP-SMED, IITP-SMED-STT, AIHUB-SER]
+Available --dataset arguments must be one of [IITP-SMED-ORIGIN, IITP-SMED-STT, IITP-SMED-AUDIO, IITP-SMED-ORIGIN-TEXT, IITP-SMED-STT-TEXT]
 
 You can choose a single GPU, and cuda_id is the order of available GPU devices.
 
