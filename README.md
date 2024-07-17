@@ -5,7 +5,9 @@ The database consists of text and audio which is acquired when uttering scripts 
 
 There are 7 target emotions: 1) joy, 2) neutral, 3) anxiety, 4) embarrassment, 5) hurt, 6) sadness, and 7) anger
 
-## Dependencies
+![image](https://github.com/user-attachments/assets/37dbb8a7-2900-4a26-b6c3-e5a9c3e5d537)
+
+# 2. Dependencies
 * torch
 * pandas 
 * numpy
@@ -23,7 +25,7 @@ pip install -r requirements.txt
 
 You should consider deep learning setups such as CUDA and PyTorch versions available in your local environments.
 
-## Usage
+# 3. Usage
 
 Train and evaluate the model by executing as
 
