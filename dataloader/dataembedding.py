@@ -3,7 +3,7 @@ import opensmile
 import torch
 import pandas as pd
 import numpy as np
-from kobert_tokenizer import KoBERTTokenizer
+from kobert_tokenizer import get_tokenizer
 from transformers import BertModel
 from dataloader.dataloader import AudioTextDataset, load_dataset
 from tqdm import tqdm
@@ -93,7 +93,7 @@ class DataProcessor:
 
 
     def extract_text_embeddings(self):
-        tokenizer = KoBERTTokenizer.from_pretrained('skt/kobert-base-v1')
+        tokenizer = get_tokenizer()
         model = BertModel.from_pretrained('skt/kobert-base-v1')
         if self.args.text == 'stt':
             stt_text = self.STT()
@@ -101,7 +101,7 @@ class DataProcessor:
             _, text, emotion = self.dataset[idx]
 
             if self.args.text == 'stt':
-                text = stt_text[idx]
+                text = stt_text.iloc[idx]['text']
 
             filename = os.path.basename(self.dataset[idx][0]).split('.')[0]
 

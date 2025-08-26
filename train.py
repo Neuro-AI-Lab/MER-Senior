@@ -79,7 +79,8 @@ def main(args):
     n_subjects_by_fold = args.n_subjects // args.n_folds
 
     # Generate the tensor
-    random_unique_indices = generate_random_unique_indices(args.n_times_draw, n_subjects_by_fold, args.n_subjects)
+    # random_unique_indices = generate_random_unique_indices(args.n_times_draw, n_subjects_by_fold, args.n_subjects)
+    random_unique_indices = generate_random_unique_indices(args.n_folds, n_subjects_by_fold, args.n_subjects)
 
     log.info("---------------- Subject-independent experiments - number of subjects: {}, number of folds: {}, number of iterations: {} --------------".format(
         int(args.n_subjects), args.n_folds, args.n_times_draw))
@@ -154,7 +155,7 @@ def main(args):
             log.info(f"graph node features are saved to {args.feature_save_path}")
 
             identifier = torch.ones(args.n_subjects, args.n_trials).bool()
-            identifier[random_unique_indices[j]] = False
+            identifier[random_unique_indices[i]] = False
             identifier = identifier.reshape(-1)
             train_identifier = identifier.squeeze().to(device)
             test_identifier = ~train_identifier
